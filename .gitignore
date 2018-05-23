@@ -1,7 +1,5 @@
 .ftpconfig
 .cache
-dist/
-build/
 
 
 # Windows thumbnail cache files
