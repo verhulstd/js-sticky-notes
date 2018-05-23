@@ -4,8 +4,10 @@
   "description": "A vanilla JS customisable sticky-note plugin",
   "main": "./dist/index.js",
   "scripts": {
-    "bundle": "parcel ./js/index.js --out-dir ./dist --out-file index --public-url ./ --no-hmr --global StickNotes",
-    "demo": "parcel ./demo/js/index.js --out-dir ./demo/js --out-file bundle --public-url ./ --no-hmr"
+    "bundle":
+      "parcel ./js/index.js --out-dir ./dist --out-file index --public-url ./ --no-hmr --global StickyNotes",
+    "demo":
+      "parcel ./demo/js/index.js --out-dir ./demo/js --out-file bundle --public-url ./ --no-hmr"
   },
   "keywords": [
     "post-it",

@@ -1,4 +1,4 @@
-export class StickyNotes {
+export default class StickyNotes {
   constructor(msg, options = {}) {
     this.msg = msg;
     this.bgImage = this.getRandomBgImg();
@@ -9,23 +9,28 @@ export class StickyNotes {
     this.setUpEventListeners();
   }
   init() {
-    document.body.insertAdjacentHTML('afterbegin', `
+    document.body.insertAdjacentHTML(
+      "afterbegin",
+      `
     <div class="postit">
       <strong class="close"></strong>
       <strong class="drag"></strong>
       ${this.msg}
-    </div>`);
-    this.htmlElement = document.querySelector('div');
+    </div>`
+    );
+    this.htmlElement = document.querySelector("div");
     Object.assign(this.htmlElement.style, {
-      left: this.position.x + 'px',
-      top: this.position.y + 'px',
+      left: this.position.x + "px",
+      top: this.position.y + "px",
       transform: `rotate(${this.rotation}deg)`,
       backgroundImage: `url('images/${this.bgImage}.png')`
-    })
+    });
   }
 
   setUpEventListeners() {
-    this.htmlElement.querySelector('.close').addEventListener('click', this.handleClose.bind(this));
+    this.htmlElement
+      .querySelector(".close")
+      .addEventListener("click", this.handleClose.bind(this));
     /*
     Draggable.create(this.htmlElement, {
       type: "x,y",
@@ -48,7 +53,7 @@ export class StickyNotes {
   }
 
   getRandomBgImg() {
-    var colors = ['pink', 'yellow', 'green'];
+    var colors = ["pink", "yellow", "green"];
     return colors[Math.floor(Math.random() * 3)];
   }
 
@@ -59,17 +64,23 @@ export class StickyNotes {
   getRandomPosition() {
     var resolution = this.getResolution();
     var position = {
-      x: Math.floor(Math.random() * (resolution.width - 370)) + (370 / 2),
-      y: Math.floor(Math.random() * (resolution.height - 400)) + (400 / 2)
-    }
+      x: Math.floor(Math.random() * (resolution.width - 370)) + 370 / 2,
+      y: Math.floor(Math.random() * (resolution.height - 400)) + 400 / 2
+    };
     return position;
   }
 
   getResolution() {
     var resolution = {
-      width: window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
-      height: window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
-    }
+      width:
+        window.innerWidth ||
+        document.documentElement.clientWidth ||
+        document.body.clientWidth,
+      height:
+        window.innerHeight ||
+        document.documentElement.clientHeight ||
+        document.body.clientHeight
+    };
     return resolution;
   }
 }
