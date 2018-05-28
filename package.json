@@ -1,6 +1,6 @@
 {
   "name": "js-sticky-notes",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A vanilla JS customisable sticky-note plugin",
   "main": "./dist/index.js",
   "scripts": {
