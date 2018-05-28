@@ -1,5 +1,5 @@
 // ES6 import
-// import StickyNotes from "../../dist/index";
+import StickyNotes from "../../dist/index";
 
 // importing using require
 // var StickyNotes = require("../../dist/index");
